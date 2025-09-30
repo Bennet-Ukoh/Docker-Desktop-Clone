@@ -15,7 +15,8 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile menu button */}
-      <div className="lg:hidden fixed top-2 left-2 z-50">
+      {/* Raise z so it appears above the Topbar (z-50) and position slightly lower for visibility */}
+      <div className="lg:hidden fixed top-3 left-3 z-[60]">
         <Button
           variant="ghost"
           size="sm"
@@ -27,11 +28,22 @@ export default function Sidebar() {
       </div>
 
       {/* Sidebar for mobile screens */}
+      {/* Backdrop when open (mobile only) */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-dark-900 z-30 lg:hidden transition-opacity"
+          onClick={() => setIsOpen(false)}
+          aria-hidden
+        />
+      )}
+
       <aside
         className={cn(
-          "fixed p-4 inset-y-0 left-0 z-40 w-64  transform transition-transform duration-200 ease-in-out lg:translate-x-0",
+          // Add an explicit background so the sidebar doesn't appear transparent over the main content
+          "fixed p-4 inset-y-0 left-0 z-40 w-64 bg-gray-950 shadow-lg transform transition-transform duration-200 ease-in-out lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
+        aria-hidden={!isOpen}
       >
         {/* Navigation */}
         <nav className="flex-1 p-2 space-y-2 mt-12">

@@ -27,12 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex h-screen bg-gray-950 text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen bg-gray-950 text-white antialiased`}
       >
         <Sidebar />
         <div className="flex flex-col flex-1">
           <Topbar />
-          <main className="pl-64 overflow-y-auto">{children}</main>
+          {/* Make left padding responsive: no padding on small screens, keep for lg and above */}
+          <main className="pl-0 lg:pl-64 overflow-y-auto">{children}</main>
         </div>
       </body>
     </html>

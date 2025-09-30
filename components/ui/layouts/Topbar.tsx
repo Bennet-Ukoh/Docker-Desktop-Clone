@@ -13,7 +13,8 @@ export default function Topbar({
   avatarUrl,
 }: TopbarProps) {
   return (
-    <header className="sm:pl-0 pl-16 h-12 bg-blue-600 flex items-center justify-between px-3 shadow-sm">
+    // Use sticky + higher z-index so Topbar always appears above the Sidebar (z-40)
+    <header className="sticky top-0 z-50 lg:pl-4 pl-16 h-12 bg-blue-600 flex items-center justify-between px-3 shadow-sm">
       {/* Left Section: Logo + Title + Update Button */}
       <div className="flex items-center gap-3 flex-shrink-0">
         {/* Red, Yellow, Green circles */}

@@ -29,12 +29,12 @@ export default function Sidebar() {
       {/* Sidebar for mobile screens */}
       <aside
         className={cn(
-          "fixed p-4 inset-y-0 left-0 z-40 w-64 border-r transform transition-transform duration-200 ease-in-out lg:translate-x-0",
+          "fixed p-4 inset-y-0 left-0 z-40 w-64  transform transition-transform duration-200 ease-in-out lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
         {/* Navigation */}
-        <nav className="flex-1 p-2 space-y-2">
+        <nav className="flex-1 p-2 space-y-2 mt-12">
           {sidebarNavItems.slice(0, -2).map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -60,7 +60,7 @@ export default function Sidebar() {
 
         {/* Extension title */}
         <div className="flex items-center justify-between px-4 py-4 text-sm font-medium text-gray-400 ">
-          <span>Extension</span>
+          <span>Extensions</span>
           <MoreVertical className="h-5 w-5 hover:bg-sidebar-accent/10 cursor-pointer" />
         </div>
 

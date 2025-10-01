@@ -26,7 +26,7 @@ export default function Topbar({
 
         <h1 className=" text-sm font-semibold text-gray-100">Docker Desktop</h1>
 
-        <button className="hidden sm:block ml-2 text-xs font-medium text-gray-200 bg-blue-500 border border-gray-300 rounded px-2 py-0.5 hover:bg-blue-400">
+        <button className="hidden sm:block ml-2 text-xs font-medium text-gray-200 bg-blue-500 rounded-2xl px-2 py-0.5 hover:bg-blue-400">
           Update to latest
         </button>
       </div>
@@ -43,7 +43,7 @@ export default function Topbar({
           <input
             type="text"
             placeholder="Search for images, containers, volumes, extensions and more ..."
-            className="w-full rounded-md border border-gray-300 bg-blue-400 pl-9 pr-9 py-1 text-sm text-gray-200 placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
+            className="w-full rounded bg-blue-500 pl-9 pr-9 py-1 text-sm text-gray-200 placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           {/* End icon (right) */}
           <X
@@ -59,7 +59,7 @@ export default function Topbar({
           <Settings size={18} className="text-gray-200" />
         </button>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center px-3 py-1  bg-blue-500 rounded-2xl gap-2">
           {/* Username hidden on small screens */}
           <span className="hidden sm:inline text-sm text-gray-200">
             {username}

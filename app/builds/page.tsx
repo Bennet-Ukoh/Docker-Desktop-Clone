@@ -1,5 +1,11 @@
-import React from "react";
+import BuildHeader from "@/components/ui/builds/BuildHeader";
+import BuildTable from "@/components/ui/builds/BuildTable";
 
-export default function BuildPage() {
-  return <section className="bg-gray-900 h-screen">BuildPage</section>;
+export default function BuildsPage() {
+  return (
+    <section className="flex flex-col">
+      <BuildHeader />
+      <BuildTable />
+    </section>
+  );
 }

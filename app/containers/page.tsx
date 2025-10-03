@@ -1,11 +1,25 @@
-import React from "react";
+"use client";
 
-export default function ContainersPage() {
+import ContainerDetail from "@/components/containers/ContainerDetail";
+import ContainerHeader from "@/components/containers/ContainerHeader";
+import ContainerNav from "@/components/containers/ContainerNav";
+import { useState } from "react";
+
+export default function ContainerPage() {
+  const [activeTab, setActiveTab] = useState("Exec");
+
   return (
-    <div className="flex items-center justify-center h-full min-h-[60vh]">
-      <div className="text-center border border-gray-700 rounded-md p-6 text-gray-300">
-        <h2 className="text-xl font-semibold">Feature not yet implemented</h2>
-      </div>
+    <div className="p-6 space-y-6">
+      <ContainerHeader
+        name="dazzling_wilbur"
+        image="docker/welcome-to-docker"
+        id="1f49d3b8ec98"
+        port="8080:80"
+        status="Running"
+        since="28 seconds ago"
+      />
+      <ContainerNav active={activeTab} onChange={setActiveTab} />
+      <ContainerDetail active={activeTab} />
     </div>
   );
 }

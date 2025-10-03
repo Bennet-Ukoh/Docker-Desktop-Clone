@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export const sidebarNavItems = [
-  { name: "Containers", href: "/container", icon: Package },
+  { name: "Containers", href: "/containers", icon: Package },
   { name: "Images", href: "/images", icon: Cloudy },
   {
     name: "Volumes",

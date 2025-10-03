@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Sidebar from "@/components/ui/layouts/Sidebar";
 import Topbar from "@/components/ui/layouts/Topbar";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
           {/* Make left padding responsive: no padding on small screens, keep for lg and above */}
           <main className="pl-0 lg:pl-64 overflow-y-auto">{children}</main>
         </div>
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );

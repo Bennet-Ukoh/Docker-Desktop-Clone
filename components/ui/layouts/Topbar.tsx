@@ -2,6 +2,7 @@
 
 import { Settings, Search, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type TopbarProps = {
   username?: string;
@@ -56,7 +57,9 @@ export default function Topbar({
       {/* Right Section: Settings + User */}
       <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
         <button aria-label="Settings" className="p-1 rounded hover:bg-blue-400">
-          <Settings size={18} className="text-gray-200" />
+          <Link href="/settings" className="flex items-center">
+            <Settings size={18} className="text-gray-200" />
+          </Link>
         </button>
 
         <div className="flex items-center px-3 py-1  bg-blue-500 rounded-2xl gap-2">
